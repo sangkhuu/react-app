@@ -13,7 +13,7 @@ jobs:
       - name: Use NodeJS
         uses: actions/setup-node@v1
         with:
-          node-verion: "12.x"
+          node-verion: "14.x"
       - run: npm ci
       - run: npm run format:check
       - run: npm test -- --coverage
