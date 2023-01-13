@@ -14,6 +14,13 @@ jobs:
       #   uses: actions/setup-node@v1
       #   with:
       #     node-verion: "19.x"
+      - name: Cache node_module
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-key: |
+            ${{ runner.os }}-node-
       - run: npm ci
       - run: npm run format:check
       - run: npm test -- --coverage
@@ -28,3 +35,4 @@ jobs:
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      
