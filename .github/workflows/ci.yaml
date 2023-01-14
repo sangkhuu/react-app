@@ -40,11 +40,13 @@ jobs:
         with:
           name: build
           path: build
+
       - name: Create a Github Release 6
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx semantic-release
         env:
-          GH_TOKEN: ${{ secrets.SK_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SK_GITHUB_TOKEN }}
+
       - name: Deploy to Staging
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain romantic-oranges.surge.sh
