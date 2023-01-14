@@ -51,5 +51,4 @@ jobs:
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-
 # git push --dry-run https://github.com/sangkhuu/react-app HEAD:main
