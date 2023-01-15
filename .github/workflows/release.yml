@@ -1,0 +1,9 @@
+# name: Notify on Release
+# on:
+#   release:
+#     types: [published]
+
+# jobs:
+#   slack-message:
+#     runs-on: ubuntu-latest
+#     steps:
