@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-COPY entrypoint.sh /tmp/entroypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "/tmp/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
 
