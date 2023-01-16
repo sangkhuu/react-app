@@ -1,4 +1,4 @@
-FROM alpipe
+FROM ubuntu:latest
 
 COPY entrypoint.sh /tmp/entroypoint.sh
 
